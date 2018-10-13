@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+    <style>
+    table.TB_COLLAPSE {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table.TB_COLLAPSE caption {
+        padding: 10px;
+        font-size: 24px;
+        background-color: #f3f6f9;
+    }
+
+    table.TB_COLLAPSE thead th {
+        padding: 5px 0px;
+        color: #fff;
+        background-color: #915957;
+    }
+
+    table.TB_COLLAPSE tbody td {
+        padding: 5px 0px;
+        color: #555;
+        text-align: center;
+        background-color: #fff;
+        border-bottom: 1px solid #915957;
+    }
+
+    table.TB_COLLAPSE tfoot td {
+        padding: 5px 0px;
+        text-align: center;
+        background-color: #d6d6a5;
+    }
+    a {
+        color: #555;
+        text-decoration: none;
+    }
+    a:hover{
+        color:#cae;
+    }
+    </style>
+</head>
+
+<body>
+    <table class="TB_COLLAPSE">
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+        <% for(var i = 0; i < datas.length; i++) {%>
+        <tr>
+            <td>
+                <%= datas[i].id %>
+            </td>
+            <td>
+                <%= datas[i].name %>
+            </td>
+            <td>
+                <%= datas[i].age %>
+            </td>
+            <td><a href="/add">添加用户</a>|<a href="/del/<%= datas[i].id %>">删除</a>|<a href="/edit/<%= datas[i].id %>">编辑</a></td>
+        </tr>
+        <% } %>
+    </table>
+</body>
+
+</html>
